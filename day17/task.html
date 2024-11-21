@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        #matched,#notmatched{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <center>
+    <h2>Check UR Password is Strong or not</h2>
+    <input type="password" placeholder="enter your password"><br><br>
+    <button onclick="fun()"> click me</button><br><br>
+   
+    <h2>Check UR Password is Matched or not</h2>
+    <input type="password" id="inp1" placeholder="Enter UR Password"><br><br>
+    <input type="password"id="inp2" placeholder="Re-Enter UR Password"><br><br>
+    <div id="matched" style="color: green;">Password Matched</div>
+    <div id="notmatched" style="color: red;">Password Doesn't Matched</div>
+    <button id="button">Sumbit</button>
+    
+  
+    </center> 
+
+
+
+    <script>
+
+        
+        let input=document.getElementsByTagName("input")[0]
+         btn=document.getElementsByTagName("button")
+        function fun(){
+         if (input.value.length<5){
+            alert("UR Password is Weak")
+         }
+         else if(input.value.length<10){
+            alert("UR Password is Medium")
+
+         }
+         else{
+            alert("UR Password is Strong")
+         }
+        
+        }
+
+
+
+        
+        var inp1=document.getElementById("inp1")
+        var inp2=document.getElementById("inp2")
+        var btn=document.getElementById("button")
+        var divmatched=document.getElementById("matched")
+        var divunmatched=document.getElementById("notmatched")
+        
+        btn.addEventListener("click",function(){
+        if(inp1.value==inp2.value){
+          
+            divmatched.style.display="block"
+            divunmatched.style.display="none"
+
+        }
+        else{
+            divunmatched.style.display="block"
+            divmatched.style.display="none"
+        }
+        console.log(inp1.value)
+        console.log(inp2.value)
+    })
+
+
+
+        
+
+    </script>
+</body>
+</html>

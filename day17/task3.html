@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Calcus</title>
+</head>
+<body>
+    <center>
+        <H2>Task-3</H2>
+           <H2>CALCULATOR</H2>
+        <br><BR><Br><Br>
+        <input type="text" id="num1" placeholder="Enter UR First Number"><br><br>
+        <input type="text" id="num2" placeholder="Enter UR Second Number"><br><br>
+<br>
+        <button id="add">+</button>
+        <button id="subtract">-</button>
+        <button id="multiply">*</button>
+        <button id="divide">/</button>
+<br>
+        <p id="result"></p>       
+    </center>
+
+    <script>
+        let num1Input =document.getElementById("num1")
+        let num2Input =document.getElementById("num2")
+        let resultpara =document.getElementById("result")
+
+
+        let addbtn=document.getElementById("add");
+        let subtractbtn=document.getElementById("subtract");
+        let multiplybtn=document.getElementById("multiply");
+        let dividebtn=document.getElementById("divide");
+
+
+        function calculate(operator){
+        let num1=parseFloat(num1Input.value)
+        let num2=parseFloat(num2Input.value)
+
+        let result;
+        switch(operator){
+                case '+':
+                result= num1+num2;
+                break;
+
+                case '-':
+                result= num1-num2;
+                break;
+
+                case '*':
+                result= num1*num2;
+                break;
+
+                case '/':
+                    if(num2=== 0){
+                        result ='enter the number which id not equal is 0'
+                    }
+
+                    else{
+                        result= num1/num2;
+                    }
+                break;
+        }
+        resultpara.textContent =`Result:${result}`; 
+        }
+
+        addbtn.addEventListener('click', () => calculate('+'));
+        subtractbtn.addEventListener('click', () => calculate('-'));
+        multiplybtn.addEventListener('click', () => calculate('*'));
+        dividebtn.addEventListener('click', () => calculate('/'));
+    </script>
+
+</body>
+</html>
